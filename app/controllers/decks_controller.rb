@@ -10,4 +10,9 @@ class DecksController < ApplicationController
     )
     render :show
   end
+
+  def show
+    @deck = Deck.find_by(id: params[:id])
+    render :show
+  end
 end
