@@ -16,4 +16,13 @@ class FlashcardsController < ApplicationController
     @flashcard = Flashcard.find_by(id: params[:id])
     render :show
   end
+
+  def update
+    @flashcard = Flashcard.find_by(id: params[:id])
+    @flashcard.update(
+      question: params[:question] || @flashcard.question,
+      answer: params[:answer] || @flashcard.answer,
+    )
+    render :show
+  end
 end
