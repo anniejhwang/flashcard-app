@@ -15,4 +15,12 @@ class DecksController < ApplicationController
     @deck = Deck.find_by(id: params[:id])
     render :show
   end
+
+  def update
+    @deck = Deck.find_by(id: params[:id])
+    @deck.update(
+      title: params[:title] || @deck.title,
+    )
+    render :show
+  end
 end

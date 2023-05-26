@@ -25,12 +25,12 @@ class FlashcardsControllerTest < ActionDispatch::IntegrationTest
   end
   test "update" do
     flashcard = Flashcard.first
-    patch "/flashcards/#{flashcard.id}.json", params: { question: "Updated question" }
+    patch "/flashcards/#{flashcard.id}.json", params: { question: "Updated question", answer: "Updated answer" }
     assert_response 200
 
     data = JSON.parse(response.body)
     assert_equal "Updated question", data["question"]
-    assert_equal flashcard.answer, data["answer"]
+    assert_equal "Updated answer", data["answer"]
   end
 
   test "destroy" do

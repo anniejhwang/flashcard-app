@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/decks" => "decks#index"
   post "/decks" => "decks#create"
   get "/decks/:id" => "decks#show"
+  patch "/decks/:id" => "decks#update"
 end
