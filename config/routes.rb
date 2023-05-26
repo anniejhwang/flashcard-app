@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   post "/flashcards" => "flashcards#create"
   get "/flashcards/:id" => "flashcards#show"
   patch "/flashcards/:id" => "flashcards#update"
+  delete "/flashcards/:id" => "flashcards#destroy"
 end

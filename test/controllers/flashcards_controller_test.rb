@@ -32,4 +32,11 @@ class FlashcardsControllerTest < ActionDispatch::IntegrationTest
     assert_equal "Updated question", data["question"]
     assert_equal flashcard.answer, data["answer"]
   end
+
+  test "destroy" do
+    assert_difference "Flashcard.count", -1 do
+      delete "/flashcards/#{Flashcard.first.id}.json"
+      assert_response 200
+    end
+  end
 end

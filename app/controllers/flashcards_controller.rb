@@ -25,4 +25,10 @@ class FlashcardsController < ApplicationController
     )
     render :show
   end
+
+  def destroy
+    @flashcard = Flashcard.find_by(id: params[:id])
+    @flashcard.destroy
+    render json: { message: "flashcard deleted" }
+  end
 end
