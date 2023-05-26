@@ -3,4 +3,11 @@ class DecksController < ApplicationController
     @decks = Deck.all
     render :index
   end
+
+  def create
+    @deck = Deck.create(
+      title: params[:title],
+    )
+    render :show
+  end
 end

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete "/flashcards/:id" => "flashcards#destroy"
 
   get "/decks" => "decks#index"
+  post "/decks" => "decks#create"
 end
