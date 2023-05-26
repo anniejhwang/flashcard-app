@@ -8,4 +8,11 @@ class FlashcardsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal Flashcard.count, data.length
   end
+
+  test "create" do
+    assert_difference "Flashcard.count", 1 do
+      post "/flashcards.json", params: { question: "is mayonnaise and instrument", answer: "no" }
+      assert_response 200
+    end
+  end
 end
