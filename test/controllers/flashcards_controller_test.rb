@@ -15,4 +15,12 @@ class FlashcardsControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "show" do
+    get "/flashcards/#{flashcards.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["id", "question", "answer", "created_at", "updated_at"], data.keys
+  end
 end
