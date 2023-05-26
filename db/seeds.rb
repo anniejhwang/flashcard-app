@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Flashcard.create(question: "What color is an apple", answer: "red")
+
+Flashcard.create(question: "What color is grass", answer: "green")
+
+Deck.create(title: "Fruit")
+
+Deck.create(title: "Outdoors")
